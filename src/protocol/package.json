@@ -1,0 +1,12 @@
+{
+  "name": "@livecollab/protocol",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Venloc-Tech/livecollab.git",
+    "directory": "src/protocool"
+  }
+}
