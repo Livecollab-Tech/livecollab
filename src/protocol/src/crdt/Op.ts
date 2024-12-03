@@ -22,23 +22,29 @@ export type CreateOp =
   | CreateListOp
   | CreateTextOp;
 
+/**
+ * Base fields in many `Ops`
+ * @field `opId?` - The `id` that is set by the Pool when creating. Could be `undefined`, when `undo/redo`
+ * @field `id` - Pool assigns a unique id to each CRDT when creating (attach)
+ */
+type OpBaseFields = {
+  readonly opId?: string;
+  readonly id: string;
+}
+
 /* Create Operations */
 
 /**
- * Base fields in all `CREATE` ops
- * @field `opId?` - The id that is set by the Pool when creating. Could be undefined, when undo/redo
- * @field `id` - Pool assigns a unique id to each CRDT when creating (attach)
+ * Base fields in all `CREATE` ops with {@link OpBaseFields}
  * @field `parentId` - The same as `id` but referenced to parent `id` of CRDT
  * @field `parentKey` - The key or Position by which the CRDT is linked to the parent
  * @field `previousId?` - The special field for `ListLike` CRDT (see `id`). Used when `SET` value
  */
 type CreateBaseFields = {
-  readonly opId?: string;
-  readonly id: string;
   readonly parentId: string;
   readonly parentKey: string;
   readonly previousId?: string;
-}
+} & OpBaseFields;
 
 export type CreateRegisterOp = {
   readonly type: OpCode.CREATE_REGISTER;
