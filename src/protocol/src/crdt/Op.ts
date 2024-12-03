@@ -69,3 +69,24 @@ export type CreateListOp = {
 export type CreateTextOp = {
   readonly type: OpCode.CREATE_TEXT;
 } & CreateBaseFields
+
+/* Other Operations */
+
+export type SetParentLinkOp = {
+  readonly type: OpCode.SET_PARENT_LINK;
+  readonly parentKey: string;
+} & OpBaseFields
+
+export type UpdateObjectOp = {
+  readonly type: OpCode.UPDATE_OBJECT;
+  readonly data: Partial<JsonObject>;
+} & OpBaseFields
+
+export type DeleteObjectKey = {
+  readonly type: OpCode.DELETE_OBJECT_KEY;
+  readonly key: string;
+} & OpBaseFields
+
+export type DeleteCrdtOp = {
+  type: OpCode.DELETE_CRDT;
+} & OpBaseFields
