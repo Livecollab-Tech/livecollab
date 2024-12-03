@@ -6,12 +6,13 @@ export enum OpCode {
   UPDATE_OBJECT = 2,
   DELETE_OBJECT_KEY = 3,
   DELETE_CRDT = 4,
-
-  CREATE_REGISTER = 5,
-  CREATE_OBJECT = 6,
-  CREATE_MAP = 7,
-  CREATE_LIST = 8,
-  CREATE_TEXT = 9,
+  ACK = 5,
+  /* Create operations */
+  CREATE_REGISTER = 6,
+  CREATE_OBJECT = 7,
+  CREATE_MAP = 8,
+  CREATE_LIST = 9,
+  CREATE_TEXT = 10,
 }
 
 export type CreateOp =
