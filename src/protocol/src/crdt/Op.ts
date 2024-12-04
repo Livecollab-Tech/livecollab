@@ -8,11 +8,11 @@ export enum OpCode {
   DELETE_CRDT = 4,
   ACK = 5,
   /* Create operations */
-  CREATE_REGISTER = 6,
-  CREATE_OBJECT = 7,
-  CREATE_MAP = 8,
-  CREATE_LIST = 9,
-  CREATE_TEXT = 10,
+  CREATE_REGISTER = 15,
+  CREATE_OBJECT = 16,
+  CREATE_MAP = 17,
+  CREATE_LIST = 18,
+  CREATE_TEXT = 19,
 }
 
 export type CreateOp =
