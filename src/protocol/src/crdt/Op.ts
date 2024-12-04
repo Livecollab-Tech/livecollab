@@ -82,7 +82,7 @@ export type UpdateObjectOp = {
   readonly data: Partial<JsonObject>;
 } & OpBaseFields
 
-export type DeleteObjectKey = {
+export type DeleteObjectKeyOp = {
   readonly type: OpCode.DELETE_OBJECT_KEY;
   readonly key: string;
 } & OpBaseFields
