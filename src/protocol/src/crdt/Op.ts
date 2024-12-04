@@ -96,7 +96,7 @@ export type DeleteObjectKeyOp = {
 } & OpBaseFields
 
 export type DeleteCrdtOp = {
-  type: OpCode.DELETE_CRDT;
+  readonly type: OpCode.DELETE_CRDT;
 } & OpBaseFields
 
 /* Ack Operation */
