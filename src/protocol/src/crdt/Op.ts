@@ -90,3 +90,20 @@ export type DeleteObjectKey = {
 export type DeleteCrdtOp = {
   type: OpCode.DELETE_CRDT;
 } & OpBaseFields
+
+/* Ack Operation */
+
+/**
+ * `Acknowledgment`
+ *
+ * Create an Op that can be used as an acknowledgment for the given opId, to
+ * send back to the originating client in cases where the server decided to
+ * ignore the Op and not forward it.
+ *
+ * It's important for the client to receive an acknowledgment for this, so
+ * that it can correctly update its own unacknowledged Ops administration.
+ * Otherwise, it could get in "synchronizing" state indefinitely.
+ */
+export type AckOp = {
+  readonly type: OpCode.ACK;
+} & Required<OpBaseFields>
