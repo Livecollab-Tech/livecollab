@@ -15,6 +15,14 @@ export enum OpCode {
   CREATE_TEXT = 19,
 }
 
+export type Op =
+  | CreateOp
+  | DeleteCrdtOp
+  | AckOp
+  | DeleteObjectKeyOp
+  | UpdateObjectOp
+  | SetParentLinkOp
+
 export type CreateOp =
   | CreateRegisterOp
   | CreateObjectOp
@@ -84,7 +92,7 @@ export type UpdateObjectOp = {
 
 export type DeleteObjectKeyOp = {
   readonly type: OpCode.DELETE_OBJECT_KEY;
-  readonly key: string;
+  readonly parentKey: string;
 } & OpBaseFields
 
 export type DeleteCrdtOp = {
