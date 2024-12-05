@@ -30,7 +30,7 @@ export type ClientBroadcastEventMsg<E extends Json> = {
 export type ClientUpdatePresenceMsg<P extends JsonObject> = {
   readonly type: ClientMsgCode.UPDATE_PRESENCE;
   readonly isFull: boolean;
-  readonly data: P;
+  readonly data: P | Partial<P>;
 };
 
 export type ClientFetchStorageMsg = {
